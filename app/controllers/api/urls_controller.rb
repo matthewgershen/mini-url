@@ -4,7 +4,7 @@ class Api::UrlsController < ApplicationController
     @url = Url.new(url_params)
     @url.count = 1
     if @url.save
-      render :show
+      render json: @url
     else
       render json: @url.errors.full_messages, status: 422
     end

@@ -4,7 +4,11 @@ Rails.application.routes.draw do
   root "static_pages#root"
 
   namespace :api,defaults: {format: :json} do
-    resources :urls
+    resources :urls do
+      collection do
+        get 'mini'
+      end
+    end
 
   end
 end
