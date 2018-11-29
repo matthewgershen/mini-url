@@ -12,7 +12,7 @@ class Api::UrlsController < ApplicationController
 
   def show
     @url = Url.find(params[:id])
-    render :show
+    redirect_to(@url.url)
   end
 
   def index
