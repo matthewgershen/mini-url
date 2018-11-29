@@ -15,10 +15,15 @@ class Url < ApplicationRecord
   validates :url, uniqueness: true
 
 
-  after_create :generate_mini_url
+  after_create :generate_mini_url, :get_title
 
   def generate_mini_url
     self.mini_url = "www.miniurl.com/" + self.id.to_s(36)
+    self.save
+  end
+
+  def get_title
+    self.title = Nokogiri::HTML::Document.parse(HTTParty.get(self.url).body).title
     self.save
   end
 

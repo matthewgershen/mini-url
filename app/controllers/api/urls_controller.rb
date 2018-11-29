@@ -15,6 +15,11 @@ class Api::UrlsController < ApplicationController
     render :show
   end
 
+  def index
+    @urls = Url.limit(100).order('count desc')
+    render :index
+  end
+
   private
 
   def url_params
