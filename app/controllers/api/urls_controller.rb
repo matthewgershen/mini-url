@@ -2,14 +2,14 @@ class Api::UrlsController < ApplicationController
 
   def create
 
-    @url = Url.find_by(url: url_params[:url])
+    @url = Url.find_by(url: params[:url])
     if @url
       @url.count += 1
       @url.save
       render json: @url
     else
 
-      @url = Url.new(url_params)
+      @url = Url.new(url: params[:url])
       @url.count = 1
       if @url.save
         render json: @url
@@ -29,12 +29,6 @@ class Api::UrlsController < ApplicationController
     render :index
   end
 
-  private
 
-  def url_params
-    params.require(:url).permit(
-      :url
-    )
-  end
 
 end
