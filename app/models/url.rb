@@ -31,7 +31,7 @@ class Url < ApplicationRecord
 
     url = URI.parse(self.url)
     if !(url.kind_of?(URI::HTTP) || url.kind_of?(URI::HTTPS))
-      errors.add(:url, "must be a valid.")
+      errors.add(:url, "must be valid.")
     end
   end
 end
