@@ -1,12 +1,21 @@
 class Api::UrlsController < ApplicationController
 
   def create
-    @url = Url.new(url_params)
-    @url.count = 1
-    if @url.save
+
+    @url = Url.find_by(url: url_params[:url])
+    if @url
+      @url.count += 1
+      @url.save
       render json: @url
     else
-      render json: @url.errors.full_messages, status: 422
+
+      @url = Url.new(url_params)
+      @url.count = 1
+      if @url.save
+        render json: @url
+      else
+        render json: @url.errors.full_messages, status: 422
+      end
     end
   end
 

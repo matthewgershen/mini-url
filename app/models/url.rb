@@ -18,7 +18,7 @@ class Url < ApplicationRecord
   after_create :generate_mini_url, :get_title
 
   def generate_mini_url
-    self.mini_url = "www.miniurl.com/" + self.id.to_s(36)
+    self.mini_url = "localhost:3000/api/urls/" + self.id.to_s(36)
     self.save
   end
 
