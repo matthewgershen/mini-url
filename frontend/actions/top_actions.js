@@ -1,16 +1,16 @@
 import * as UrlApiUtil from './../util/url_api_util';
 
-export const RECEIVE_TOP = "RECEIVE_TOP";
+export const RECEIVE_TOP_URLS = "RECEIVE_TOP_URLS";
 
 
-const receiveTop = (top) => {
+const receiveTopUrls = (top) => {
   return {
-    type: RECEIVE_TOP,
+    type: RECEIVE_TOP_URLS,
     top
   };
 };
 
-export const fetchTop = () => dispatch => (
-  UrlApiUtil.fetchTop().then((top) =>
-  dispatch(receiveTop(top)))
+export const fetchTopUrls = () => dispatch => (
+  UrlApiUtil.fetchTopUrls().then((top) =>
+  dispatch(receiveTopUrls(top)))
 );
