@@ -20,9 +20,6 @@ form {
   }
 }
 
-ul{
-  list-style: none;
-}
 
 .mini {
   margin:auto;
@@ -31,4 +28,26 @@ ul{
   background-color: lightgray;
   text-align: center;
   padding: 50px 0;
+}
+
+.top{
+  margin: auto;
+  width: 75%;
+  min-width: 700px;
+  text-align: center;
+
+  li{
+    display: flex;
+    justify-content: space-between;
+
+  }
+
+  span{
+    width: 300px;
+    text-overflow: ellipsis;
+    overflow: hidden;
+    white-space: nowrap;
+    text-align: left;
+
+  }
 }

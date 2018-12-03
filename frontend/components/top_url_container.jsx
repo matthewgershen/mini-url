@@ -20,11 +20,11 @@ const TopUrlContainer = (props) =>{
       );
     });
 return(
-      <div>
+      <div className="top">
         <h3>Top Urls</h3>
-        <ul>
+        <ol>
           {topUrls}
-        </ul>
+        </ol>
       </div>
     );
 
