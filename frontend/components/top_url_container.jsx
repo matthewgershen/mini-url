@@ -5,11 +5,11 @@ const TopUrlContainer = (props) =>{
 
   if (Object.keys(props.top).length === 0) {
     return(
-      <div>No props yet</div>
+      <div></div>
     )
   }else {
     const topUrls = Object.values(props.top).map((url,idx)=>{
-      
+
       return (
             <li key={idx}>
               <span>{url.url}</span>

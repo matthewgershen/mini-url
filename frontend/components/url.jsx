@@ -3,6 +3,7 @@ import { connect } from 'react-redux';
 import { fetchTopUrls } from '../actions/top_actions';
 import { createUrl } from '../actions/url_actions';
 import TopUrlContainer from './top_url_container'
+import MiniUrlContainer from './Mini_url_container'
 
 class Url extends React.Component{
   constructor(props) {
@@ -34,8 +35,8 @@ class Url extends React.Component{
 
     return(
       <div>
+        <h1>Mini Url</h1>
         <form>
-          <label>URL</label>
           <input
             value={this.state.url}
             placeholder="https://www.your-url-here.com/"
@@ -43,6 +44,7 @@ class Url extends React.Component{
             />
           <button onClick={this.handleSubmit}>Get MiniUrl</button>
         </form>
+        <MiniUrlContainer url={this.props.url}/>
         <TopUrlContainer top={this.props.top}/>
       </div>
     )
@@ -50,7 +52,8 @@ class Url extends React.Component{
 }
 const mapStateToProps = (state) => {
   return{
-    top: state.entities.top
+    top: state.entities.top,
+    url: state.entities.url
   };
 };
 
