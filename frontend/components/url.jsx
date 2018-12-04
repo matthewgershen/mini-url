@@ -22,7 +22,7 @@ class Url extends React.Component{
 
   handleSubmit(e) {
     e.preventDefault();
-    this.props.createUrl(this.state.url)
+    this.props.createUrl(this.state.url).then(action => this.props.fetchTopUrls())
     this.setState({url: ""});
   }
 

@@ -25,10 +25,10 @@ class Api::UrlsController < ApplicationController
   end
 
   def index
-    @urls = Url.limit(100).order('count desc')
+    @urls = Url.limit(100)
     render :index
   end
 
-  
+
 
 end

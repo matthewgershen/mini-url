@@ -28,6 +28,16 @@ form {
   background-color: lightgray;
   text-align: center;
   padding: 50px 0;
+  border-radius: 4px;
+}
+
+.placeholder {
+  margin:auto;
+  width: 50%;
+  min-width: 700px;
+  background-color: white;
+  text-align: center;
+  padding: 59px 0;
 }
 
 .top{
@@ -43,11 +53,28 @@ form {
   }
 
   span{
-    width: 300px;
+    width: 500px;
     text-overflow: ellipsis;
     overflow: hidden;
     white-space: nowrap;
     text-align: left;
 
   }
+
+  .headers{
+    text-decoration: underline;
+    font-weight: bold;
+
+    span{
+      text-align: center;
+    }
+  }
+
+  .count{
+    text-align: center;
+  }
+}
+
+button{
+  cursor: pointer;
 }
