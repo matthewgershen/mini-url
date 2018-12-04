@@ -3,7 +3,7 @@ import { connect } from 'react-redux';
 import { fetchTopUrls } from '../actions/top_actions';
 import { createUrl } from '../actions/url_actions';
 import TopUrlContainer from './top_url_container'
-import MiniUrlContainer from './Mini_url_container'
+import MiniUrlContainer from './mini_url_container'
 
 class Url extends React.Component{
   constructor(props) {
