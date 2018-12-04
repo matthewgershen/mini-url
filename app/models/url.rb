@@ -24,8 +24,7 @@ class Url < ApplicationRecord
   end
 
   def get_title
-    self.title = Nokogiri::HTML::Document.parse(HTTParty.get(self.url).body).title
-    self.save
+    GetTitleJob.perform_now(self)
   end
 
   def valid_url
