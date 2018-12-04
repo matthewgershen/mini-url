@@ -20,7 +20,7 @@ class Api::UrlsController < ApplicationController
   end
 
   def show
-    @url = Url.find(params[:id])
+    @url = Url.find_by(mini_key: params[:id])
     redirect_to(@url.url)
   end
 

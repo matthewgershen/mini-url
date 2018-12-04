@@ -10,7 +10,7 @@
 #
 # It's strongly recommended that you check this file into your version control system.
 
-ActiveRecord::Schema.define(version: 2018_11_29_182757) do
+ActiveRecord::Schema.define(version: 2018_12_04_152822) do
 
   # These are extensions that must be enabled in order to support this database
   enable_extension "plpgsql"
@@ -20,6 +20,8 @@ ActiveRecord::Schema.define(version: 2018_11_29_182757) do
     t.string "mini_url"
     t.string "title"
     t.integer "count", null: false
+    t.string "mini_key"
+    t.index ["mini_key"], name: "index_urls_on_mini_key"
     t.index ["url"], name: "index_urls_on_url", unique: true
   end
 
